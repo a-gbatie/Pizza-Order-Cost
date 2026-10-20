@@ -58,3 +58,9 @@ elif distance <= 5: # If delivery distance is 5 miles or less
   delivery_fee = 2 # Charge $2
 else:
   delivery_fee = 2 + (distance - 5) * 1 # Otherwise if distance is further than 5 miles, charge $1 for each additional mile
+  
+# Calculate total cost
+total_cost = pizza_price + toppings_cost + delivery_fee
+
+# Display the total cost
+print(f"Your total cost for this order is ${total_cost:.2f}.")
