@@ -1,3 +1,5 @@
+import sys
+
 # Pizza Order Cost Calculator
 # This program calculates the total cost of a pizza order.
 # The total includes pizza size, toppings, and delivery fees.
@@ -35,10 +37,6 @@ END
 # Get order information from the customer
 pizza_size = input("Enter pizza size (small or large): ")
 
-toppings = int(input("Enter number of toppings: "))
-
-distance = float(input("Enter delivery distance in miles: "))
-
 # Determine the price based on the pizza size
 if pizza_size == "small": # Check if pizza size is small
   pizza_price = 8 # If yes, charge $8
@@ -46,8 +44,12 @@ elif pizza_size == "large": # Check if pizza size is large
   pizza_price = 12 # If yes, charge $12
 else:
   pizza_price = 0 # If neither small or large, charge $0
-  print("Invalid pizza size") # Print this statement because only small or large sizes are accepted
+  print("Invalid pizza size. Please enter small or large.") # Print this statement because only small or large sizes are accepted
+  sys.exit() # Stops the program if invalid pizza size is entered
   
+toppings = int(input("Enter number of toppings: "))
+distance = float(input("Enter delivery distance in miles: "))
+
 # Calculate the cost of additional toppings
 toppings_cost = toppings * 1
 
